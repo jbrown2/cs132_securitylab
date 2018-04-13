@@ -15,6 +15,8 @@ var favicon = require("serve-favicon");
 var bodyParser = require("body-parser");
 var session = require("express-session");
 
+var validator = require('validator');
+
 var consolidate = require("consolidate"); // Templating library adapter for Express
 var swig = require("swig");
 var http = require("http");
@@ -121,7 +123,7 @@ function setup()
 
    // Template system setup
    swig.setDefaults({
-	 autoescape: false
+	 autoescape: true
     });
 
    var port = config.PORT;
